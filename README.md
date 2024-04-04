@@ -28,3 +28,7 @@ This resource offers a wide range of short code snippets that can be used for va
 
 Using short codes can significantly save time and increase developer productivity. With codes available for different
 languages and frameworks, they are a valuable resource for any developer.
+
+## Contents
+
+- [media-devices](media-devices)
