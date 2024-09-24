@@ -1,0 +1,125 @@
+@import url('https://unpkg.com/normalize.css') layer(normalize);
+
+@import 'modules/tweakpane.css' layer(tweakpane);
+
+@layer normalize, tweakpane, base, data, debug;
+
+@layer demo {
+  #video {
+    border: 1px solid black;
+    box-shadow: 2px 2px 3px black;
+    width: 1280px;
+  }
+
+  .mask {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: 2px solid white;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0);
+    color: white;
+    width: var(--mask-size);
+    height: var(--mask-size);
+    text-align: center;
+    line-height: var(--mask-size);
+  }
+
+  #photo {
+    border: 1px solid black;
+    box-shadow: 2px 2px 3px black;
+    width: 640px;
+  }
+
+  #canvas {
+    display: none;
+  }
+
+  .camera {
+    width: 1300px;
+    display: inline-block;
+    position: relative;
+  }
+
+  #svg-filter {
+    display: none;
+  }
+
+  #video, #photo {
+    image-rendering: crisp-edges; /* To avoid pixel blur */
+  }
+}
+
+@layer data {
+  [data-theme='light'] {
+    color-scheme: light only;
+  }
+
+  [data-grayscale='true'] #video {
+    filter: grayscale(1);
+  }
+
+  [data-theme='dark'] {
+    color-scheme: dark only;
+  }
+
+  [data-debug='true'] .docs {
+    display: none;
+  }
+
+  [data-debug='true'] :where(header, footer) {
+    display: none;
+  }
+}
+
+@layer base {
+  :root {
+    --font-size-min: 16;
+    --mask-size: 100px;
+  }
+
+  html {
+    color-scheme: light dark;
+  }
+
+  *,
+  *:after,
+  *:before {
+    box-sizing: border-box;
+  }
+
+  body {
+    display: grid;
+    min-height: 100vh;
+    font-size: var(--font-size-min);
+    font-family: "Open Sans", sans-serif, Arial, system-ui;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+
+    padding: 1rem;
+  }
+
+  body::before {
+    --size: 45px;
+    --line: color-mix(in lch, canvasText, transparent 70%);
+    content: '';
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background: linear-gradient(
+      90deg,
+      var(--line) 1px,
+      transparent 1px var(--size)
+    ) 50% 50% / var(--size) var(--size),
+    linear-gradient(var(--line) 1px, transparent 1px var(--size)) 50% 50% /
+        var(--size) var(--size);
+    mask: linear-gradient(-20deg, transparent 50%, white);
+    top: 0;
+    transform-style: flat;
+    pointer-events: none;
+    z-index: -1;
+  }
+}
