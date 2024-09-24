@@ -95,14 +95,12 @@ function clearPhoto() {
 function takeVideoSnapshot() {
   const context = canvasElem.getContext('2d');
 
-  canvasElem.width = PARAMS.video.width;
-  canvasElem.height = PARAMS.video.height;
+  const {width, height} = PARAMS.video;
 
-  context.drawImage(videoElem, 0, 0, PARAMS.video.width, PARAMS.video.height);
-  if (PARAMS.video.facingMode !== 'environment') {
-    context.translate(videoElem.videoWidth, 0);
-    context.scale(-1, 1);
-  }
+  canvasElem.width = width;
+  canvasElem.height = height;
+
+  context.drawImage(videoElem, 0, 0, width, height, 0, 0, width, height);
 
   return canvasElem.toDataURL(PARAMS.output.type, PARAMS.output.quality);
 }
@@ -115,6 +113,15 @@ function takePicture() {
 
   const dialog = document.querySelector('dialog');
   dialog.showModal();
+}
+
+function downloadPhoto() {
+  const link = document.createElement('a');
+  link.href = takeVideoSnapshot();
+  link.download = 'image file name here';
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 
 async function createVideoStream() {
@@ -294,12 +301,7 @@ window.addEventListener('load', async () => {
   pane.addButton({
     title: 'Download Photo'
   }).on('click', () => {
-    const link = document.createElement('a')
-    link.href = takeVideoSnapshot();
-    link.download = 'image file name here'
-    document.body.appendChild(link)
-    link.click()
-    document.body.removeChild(link)
+    downloadPhoto();
   });
 
   const videoInputs = await getVideoInputs();

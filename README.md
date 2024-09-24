@@ -29,6 +29,27 @@ This resource offers a wide range of short code snippets that can be used for va
 Using short codes can significantly save time and increase developer productivity. With codes available for different
 languages and frameworks, they are a valuable resource for any developer.
 
+### How to host an HTML file with ngrok? 
+
+```bash
+python3 -m http.server
+  or
+python -m SimpleHTTPServer
+
+ngrok http http://localhost:8000
+```
+or
+
+```bash 
+ngrok http file:///Users/Share
+```
+
+```cmd
+ngrok http "file:///C:\Users\Share"
+  or
+ngrok http "file:///."
+```
+
 ## Contents
 
 - [media-devices](media-devices)
