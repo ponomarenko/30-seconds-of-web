@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    body {
+      height: 100vh;
+      overflow: hidden;
+      display: grid;
+      place-items: center;
+    }
+
+    aside {
+      display: flex;
+      gap: 45px;
+    }
+
+    aside .icon {
+      height: 80px;
+      width: 80px;
+    }
+
+    aside .icon:after {
+      filter: blur(10px);
+    }
+
+    .photo-1 {
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/31/NS7339_-_grafitti_4_--_%27t_Harde_20180908.jpg');
+      border-radius: 4px;
+    }
+
+    .backlight {
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 300px;
+      height: 300px;
+      position: relative;
+    }
+
+    .backlight:after {
+      content: '';
+      width: 100%;
+      height: 100%;
+      top: 0;
+      position: absolute;
+      background: inherit;
+      filter: blur(20px);
+      z-index: -1;
+    }
+  </style>
+</head>
+<body>
+<div class="backlight photo-1">
+  <!-- Jan Derk Remmers, CC BY-SA 4.0 <https://creativecommons.org/licenses/by-sa/4.0>, via Wikimedia Commons -->
+</div>
+
+<aside>
+  <div
+    class="backlight icon"
+    style="
+      background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/e1/Google_Chrome_icon_%28February_2022%29.svg);
+    "
+  >
+    <!-- Google, Public domain, via Wikimedia Commons -->
+  </div>
+
+  <div
+    class="backlight icon"
+    style="
+      background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg);
+    "
+  >
+    <!-- Evan You, https://github.com/yyx990803, CC BY 4.0 <https://creativecommons.org/licenses/by/4.0>, via Wikimedia Commons -->
+  </div>
+
+  <div
+    class="backlight icon"
+    style="
+      background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/98/Microsoft_Edge_logo_%282019%29.svg);
+    "
+  >
+    <!-- Microsoft Corporation, MIT <http://opensource.org/licenses/mit-license.php>, via Wikimedia Commons -->
+  </div>
+
+  <div
+    class="backlight icon"
+    style="
+      background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg);
+    "
+  >
+    <!-- Figma, Public domain, via Wikimedia Commons -->
+  </div>
+</aside>
+
+</body>
+</html>
