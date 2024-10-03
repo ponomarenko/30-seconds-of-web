@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Signup Example</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="two-column-layout">
+        <div class="left">
+            <form class="my-form">
+                <div class="login-welcome-row">
+                    <!-- svg -->
+                    <h1>Get Started Now</h1>
+                    <p>Enter your credentials to access your account</p>
+                </div>
+                <div class="socials-row">
+                    <a href="#" title="Use Google">
+                        <img src="assets/google.png" alt="Google">
+                        Sign up with Google
+                    </a>
+                    <!-- links -->
+                </div>
+                <div class="lines">
+                    <div class="line"></div>
+                    or
+                    <div class="line"></div>
+                </div>
+                <div class="text-field">
+                    <label for="name">Name</label>
+                    <input 
+                        type="text" id="name" name="name" 
+                        autocomplete="off" placeholder="David Mraz"
+                        required>
+                    <div class="error-message">Your name is required</div>
+                </div>
+                <!-- text fields -->
+                <button type="submit" class="my-form__button">
+                    Sign Up
+                </button>
+                <div class="my-form__actions">
+                    <div class="my-form__row">
+                        <div>
+                            <span>How an account?</span>
+                            <a href="#" title="Login">
+                                Sign In
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#forgot-password" title="Forgot password">
+                                Forgot password?
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+            <footer class="footer">
+                2024 Atheros Intelligence Ltd. &copy; All rights reserved
+            </footer>
+        </div>
+        <div class="right">
+            <div class="box">
+                <h2>Track your time more efficiently</h2>
+                <p>The simples way to manage your workforce!</p>
+                <img src="assets/dashboard.png" class="mockup" alt="Dashboard">
+                <div class="logos">
+                    <img src="assets/logos/asana.svg" alt="Asana">
+                    <!-- logos -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
+
+<!-- https://dribbble.com/shots/20448736-TimeTracker-Sign-Up-Sign-In-Page -->

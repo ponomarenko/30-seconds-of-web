@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediaDevices Playground</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+        rel="stylesheet">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+<header>
+  <h1>navigator.mediaDevices.getUserMedia(): Still photo capture demo</h1>
+  <p>
+    This example demonstrates how to set up a media stream using your built-in
+    webcam, fetch an image from that stream, and create a PNG using that image.
+  </p>
+</header>
+<main>
+  <div class="camera">
+    <video id="video">Video stream not available.</video>
+    <div class="mask">+</div>
+    <div class="mask" style="background: rgba(0, 0, 0, 0) url('images/mask-1.webp') no-repeat scroll center center / cover"></div>
+  </div>
+</main>
+<footer>
+  <p>
+    Visit our article
+    <a
+      href="https://developer.mozilla.org/en-US/docs/Web/API/Media_Capture_and_Streams_API/Taking_still_photos">
+      Taking still photos with WebRTC</a
+    >
+    to learn more about the technologies used here.
+  </p>
+</footer>
+
+<!--Not visible elements-->
+
+<canvas id="canvas"></canvas>
+
+<dialog>
+  <img id="photo" src="" alt="The screen capture will appear in this box."/>
+  <form method="dialog">
+    <button>OK</button>
+  </form>
+</dialog>
+
+<script type="module" src="scripts/main.js"></script>
+</body>
+</html>

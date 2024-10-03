@@ -1,0 +1,329 @@
+
+:root {
+  --bg: #F6F8FC;
+  --primary: #705CFF;
+  --primary-2: #705CFF60;
+  --primary-3: #705CFF30;
+  --h2-color: #5B5D72;
+  --cube-side: 2.75rem;
+  --cube-side-half: calc(var(--cube-side) / 2);
+}
+
+body {
+  background: var(--bg);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  font-family: 'Poppins', sans-serif; 
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 7rem;
+}
+
+.loaders {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: 6.5rem 6.5rem 6.5rem;
+    grid-template-rows: 8rem 8rem;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 16px;
+}
+
+h1 {
+  color: var(--h2-color);
+  margin-top: 0;
+  margin-bottom: 0.125rem;
+}
+
+.emph {
+  color: #705CFF;
+}
+
+.loader-1 {
+  margin-top: 6px;
+}
+
+.loader-1 svg polyline {
+  fill: none;
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.loader-1 svg polyline#back {
+  fill: none;
+  stroke: var(--primary-3);
+}
+
+.loader-1 svg polyline#front {
+  fill: none;
+  stroke: var(--primary);
+  stroke-dasharray: 48, 144;
+  stroke-dashoffset: 192;
+  animation: l1 1.4s linear infinite;
+}
+
+@keyframes l1 {
+  72.5% {
+    opacity: 0;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes l2 {
+  0%,
+  20%,
+  80%,
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  30%,
+  70% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.loader-2 {
+  height: 24px;
+  position: relative;
+  width: 24px;
+  margin-top: 20px;
+}
+
+.loader-2 div {
+  animation: l2 2.1s infinite backwards;
+  background: var(--primary);
+  height: 12px;
+  margin-top: 6px;
+  position: absolute;
+  width: 24px;
+}
+
+.loader-2 div:after, .loader-2 div:before {
+  content: '';
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.loader-2 div:after {
+  top: -6px;
+  border-bottom: 6px solid var(--primary);
+}
+
+.loader-2 div:before {
+  bottom: -6px;
+  border-top: 6px solid var(--primary);
+}
+
+.loader-2 div:nth-child(1) {
+  animation-delay: 0s;
+  left: -28px;
+  top: 0;
+}
+
+.loader-2 div:nth-child(2) {
+  animation-delay: 0.1s;
+  left: -14px;
+  top: 22px;
+}
+
+.loader-2 div:nth-child(3) {
+  animation-delay: 0.2s;
+  left: 14px;
+  top: 22px;
+}
+
+.loader-2 div:nth-child(4) {
+  animation-delay: 0.3s;
+  left: 28px;
+  top: 0;
+}
+
+.loader-2 div:nth-child(5) {
+  animation-delay: 0.4s;
+  left: 14px;
+  top: -22px;
+}
+
+.loader-2 div:nth-child(6) {
+  animation-delay: 0.5s;
+  left: -14px;
+  top: -22px;
+}
+
+.loader-2 div:nth-child(7) {
+  animation-delay: 0.6s;
+  left: 0;
+  top: 0;
+}
+
+.loader-3 {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  padding: 3px;
+  background: 
+    radial-gradient(farthest-side,var(--primary) 95%,#0000) 50% 0/12px 12px no-repeat,
+    radial-gradient(farthest-side,#0000 calc(100% - 5px),var(--primary) calc(100% - 4px)) content-box;
+  animation: l3 2s infinite ;
+}
+
+@keyframes l3 {to{transform: rotate(1turn)}}
+
+
+.loader-4 {    
+  --r1: 154%;
+  --r2: 68.5%;
+  width: 60px;
+  aspect-ratio: 1;
+  border-radius: 50%; 
+  background:
+    radial-gradient(var(--r1) var(--r2) at top   ,#0000 79.5%, var(--primary) 80%),
+    radial-gradient(var(--r1) var(--r2) at bottom,var(--primary) 79.5%,#0000 80%),
+    radial-gradient(var(--r1) var(--r2) at top   ,#0000 79.5%, var(--primary) 80%),
+    var(--primary-3);
+  background-size: 50.5% 220%;
+  background-position: -100% 0%,0% 0%,100% 0%;
+  background-repeat:no-repeat;
+  animation: l4 2s infinite linear;
+}
+
+@keyframes l4 {
+    33%  {background-position:    0% 33% ,100% 33% ,200% 33% }
+    66%  {background-position: -100%  66%,0%   66% ,100% 66% }
+    100% {background-position:    0% 100%,100% 100%,200% 100%}
+}
+
+.loader-5 {
+  width: 60px;
+  height: 50px;
+  --m:no-repeat linear-gradient(90deg,#000 70%,#0000 0);
+  -webkit-mask: 
+    var(--m) calc(0*100%/4) 100%/calc(100%/5) calc(1*100%/5),
+    var(--m) calc(1*100%/4) 100%/calc(100%/5) calc(2*100%/5),
+    var(--m) calc(2*100%/4) 100%/calc(100%/5) calc(3*100%/5),
+    var(--m) calc(3*100%/4) 100%/calc(100%/5) calc(4*100%/5),
+    var(--m) calc(4*100%/4) 100%/calc(100%/5) calc(5*100%/5);
+  background: linear-gradient(var(--primary) 0 0) left/0% 100% no-repeat var(--primary-3);
+  animation: l5 2s infinite steps(6);
+}
+
+@keyframes l5 {
+  100% {background-size: 120% 100%}
+}
+
+
+/* loader-6 */
+.loader-6 {
+  --s: 20px;
+  --_d: calc(0.353*var(--s));
+  width: calc(var(--s) + var(--_d));
+  aspect-ratio: 1;
+  display: grid;
+}
+.loader-6:before,
+.loader-6:after {
+  content: "";
+  grid-area: 1/1;
+  clip-path: polygon(var(--_d) 0,100% 0,100% calc(100% - var(--_d)),calc(100% - var(--_d)) 100%,0 100%,0 var(--_d));
+  background:
+    conic-gradient(from -90deg at calc(100% - var(--_d)) var(--_d),
+     var(--primary-3) 135deg, var(--primary) 0 270deg, var(--primary-2) 0);
+  animation: l6 2s infinite;
+}
+
+.loader-6:after {
+  animation-delay:-1s;
+}
+
+@keyframes l6{
+  0%  {transform:translate(0,0)}
+  25% {transform:translate(30px,0)}
+  50% {transform:translate(30px,30px)}
+  75% {transform:translate(0,30px)}
+  100%{transform:translate(0,0)}
+}
+
+.code-comments {
+  white-space: nowrap;
+  color: var(--h2-color);
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.cta-text {
+  color: var(--h2-color);
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile {
+  border-radius: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.modern-frontend-developer {
+  max-width: 12rem; 
+}
+
+.learning-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #705CFF;
+}
+
+.learning-link img {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.loader-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.loader {
+  min-height: 100px;
+}

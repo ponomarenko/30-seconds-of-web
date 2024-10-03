@@ -1,0 +1,157 @@
+
+
+:root {
+    --primary: #6E45FE;
+    --primary-hover: #6034ff;
+    --btn-border: #7f57ff;
+    --white: white;
+    --text: #252728;
+    --modal-bg: #070707;
+    --headline: #1A1E1F;
+    --gray-text: #1E2026;
+    --bg: #363636;
+    --gray-light: #F3F3F4;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+*::selection {
+    background: var(--primary);
+    color: var(--white);
+}
+
+body {
+    font-family: 'Mulish', 
+    sans-serif;
+    background: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 1rem;
+}
+
+.share-btn {
+    border-radius: 50%;
+    appearance: none;
+    padding: 1rem;
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--primary);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    color: var(--btn-text);
+    background: var(--primary);
+    border: 1px solid var(
+        --btn-border);
+}
+
+.share-btn svg {
+    stroke: var(--white);
+    width: 2rem;
+    height: 2rem;
+}
+
+.share-btn:hover {
+    background: var(--primary-hover);
+}
+
+.close-btn {
+    background: inherit;
+    cursor: pointer;
+    border: none;
+}
+
+.close-btn svg {
+    stroke: var(--white);
+    height: 1.75rem;
+    width: 1.75rem;
+}
+
+.copy-link-dialog {
+    border-radius: 0.75rem;
+    max-width: 36rem;
+    margin: 0 auto;
+    width: 100%;
+    margin-top: 4rem;
+    border: none;
+    background: var(--modal-bg);
+}
+
+.copy-link-dialog header {
+    display: flex;
+    padding: 1.5rem 2rem 0.5rem 2rem;
+    border-bottom: 1px solid var(--bg);
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copy-link-dialog header h2 {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.copy-link-dialog__content {
+    padding: 2rem;
+    color: var(--white);
+}
+
+.copy-link-dialog__content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.copy-link-wrapper {
+    display: flex;
+    color: var(--gray-text);
+    border-radius: 0.5rem;
+    font-weight: 700;
+    color: var(--text);
+    justify-content: space-between;
+    background: var(--gray-light);
+    padding: 0.25rem;
+    padding-left: 1.5rem;
+}
+
+.copy-link-wrapper input {
+    color: var(--gray-text);
+    outline: none;
+    border: none;
+    width: 100%;
+    font-weight: 800;
+    background: inherit;
+    font-size: 1.2rem;
+}
+
+.copy-link-wrapper input::selection {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.copy-link-dialog h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.copy-link-wrapper button {
+    color: var(--white);
+    background: var(--primary);
+    border: 1px solid var(--btn-border);
+    white-space: nowrap;
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    align-items: center;
+}

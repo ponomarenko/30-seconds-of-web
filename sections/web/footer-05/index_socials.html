@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Supabase like footer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <main>
+    </main>
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-columns">
+                <div class="footer-logo-column">
+                    <a 
+                        href="/" aria-label="Go to Supabase homepage" 
+                        title="Go to Supabase Homepage"
+                    >
+                        <img 
+                            src="assets/logo.png" loading="lazy" alt="Supabase logo"
+                            class="footer-logo" width="200"
+                        >
+                    </a>
+                    <div class="social-wrapper">
+                        <div class='social-links'>
+                            <ul>
+                                <li><a href="#" title="Twitter"><!-- svg icon --></a></li>
+                                <!-- more socials -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="link-columns">
+                    <div>
+                        <section>
+                            <h3>Product</h3>
+                            <ul>
+                                <li>
+                                    <a href="#" title="Features">Database</a>
+                                </li>
+                                <!-- more links -->
+                            </ul>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- bottom part section -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-wrapper">
+                <small>© <span id="year"></span> Supabase Inc.</small>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById("year").innerHTML = new Date().getFullYear();
+    </script>
+
+</body>
+
+</html>
