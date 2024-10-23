@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allow photo album AND the camera</title>
+  <style>
+    code {
+      background-color: #eeeeee;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h2>How to allow the file picker AND camera capture on Android</h2>
+</header>
+<main>
+  <article>
+    <h3>Allow photo album AND the camera</h3>
+    <p>
+      On Android devices, if you want to create a file input that prompts the user to either choose an image from their
+      photo album or take a picture with their camera, you'll need this basically undocumented capture attribute added
+      to your input's accept property:
+    </p>
+    <pre><code>&lt;input type=&quot;file&quot; accept=&quot;image/*;capture=camera&quot;/&gt;</code></pre>
+    <p>
+      On iOS, the operating system will always show an image picker and the camera with a type="file" input even if it
+      doesn't have the ;capture=camera directive.
+      Also note, this attribute only does anything on mobile operating systems, this won't change the behavior of your
+      inputs for desktop clients.
+    </p>
+    <p>
+      <input type="file" accept="image/*;capture=camera"/>
+    </p>
+  </article>
+  <article>
+    <h3>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/capture" target="_blank">capture</a> property</h3>
+    <p>
+      A final note: if you add a capture property to a file input, like this:
+    </p>
+    <pre><code>&lt;input type=&quot;file&quot; accept=&quot;image/*&quot; capture=&quot;environment&quot; /&gt;</code></pre>
+    <p>
+      ...this tells the browser to prefer camera capture over an image picker. The values can be "environment" or "user".
+    </p>
+    <p>
+      <input type="file" accept="image/*" capture="environment" />
+    </p>
+  </article>
+</main>
+</body>
+</html>
