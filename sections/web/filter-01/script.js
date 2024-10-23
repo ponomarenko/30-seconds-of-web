@@ -180,7 +180,6 @@ const countryList = [
 	"Qatar",
 	"Republic of North Macedonia",
 	"Romania",
-	"Russian Federation",
 	"Rwanda",
 	"Réunion",
 	"Saint Barthélemy",
