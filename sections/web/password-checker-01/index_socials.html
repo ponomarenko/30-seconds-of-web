@@ -1,0 +1,70 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Password Checker</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+            rel="stylesheet"
+        >
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="box">
+            <div class="input__wrapper">
+                <input
+                    id="password"
+                    type="password"
+                    class="input__field"
+                    placeholder="Your Password"
+                >
+                <label
+                    for="password"
+                    class="input__label"
+                >
+                    Password
+                </label>
+                <img
+                    alt="Eye Icon"
+                    title="Eye Icon"
+                    src="assets/eye.svg"
+                    class="input__icon"
+                >
+            </div>
+            <div class="password-strength">
+                <p><span id="result"></span></p>
+                <div class="progress">
+                    <div id="password-strength"
+                        class="progress-bar"
+                        role="progressbar"
+                        aria-valuenow="40"
+                        aria-valuemin="0"
+                        aria-valuemax="100"
+                        style="width:0%; height: 3px;"
+                    >
+                    </div>
+                </div>
+                <ul class="password-strength-items">
+                    <li class="low-upper-case">
+                        <img 
+                            src="assets/circle-cross.svg" alt="Ticker" 
+                            title="Ticker" aria-hidden="true"
+                        >
+                        &nbsp;Lowercase &amp; Uppercase
+                    </li>
+                    <!-- more constraints -->
+                </ul>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
+
+
+
+

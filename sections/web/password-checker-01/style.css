@@ -1,0 +1,155 @@
+
+
+
+
+:root {
+    --primary: #4268ff;
+    --secondary: #6F7E8C;
+    --hover: #F5F5F5;
+    --text: #212121;
+}
+
+body {
+    font-family: 'Roboto', 
+        sans-serif;
+    font-size: 14px;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 8rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.box {
+    background: white;
+    padding: 1.5rem;
+    padding-top: 0.75rem;
+    border-radius: 1rem;
+    max-width: 14rem;
+    width: 100%;
+}
+
+.box h2 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.input__wrapper {
+    position: relative;
+    padding: 1rem 0 0;
+}
+
+.input__field {
+    border: 0;
+    border-bottom: 2px solid 
+        var(--secondary);
+    outline: 0;
+    font-size: 1rem;
+    color: var(--text);
+    padding: 0.25rem 0px;
+    padding-right: 2rem;
+    width: 100%;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.input__field::placeholder {
+    color: transparent;
+}
+
+.input__field:placeholder-shown 
+~ .input__label {
+    font-size: 1rem;
+    cursor: text;
+    color: var(--secondary);
+    top: 1.25rem;
+}
+
+label, .input__field:focus 
+~ .input__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    font-size: 0.875rem;
+    left: -0.0625rem;
+    color: var(--secondary);
+    transition: 0.3s;
+}
+
+.input__field:focus 
+~ .input__label {
+    color: var(--primary);
+}
+
+.input__field:focus {
+    border-bottom: 2px solid 
+        var(--primary);
+}
+
+.input__icon {
+    position: absolute;
+    bottom: -0.6875rem;
+    right: -0.85rem;
+    width: 1.625rem;
+    height: 1.625rem;
+    padding: 0.125rem;
+    transform: translate(
+        -50%,-50%);
+    transform-origin: center;
+    cursor: pointer;
+}
+
+.input__icon:hover {
+    border-radius: 50%;
+    background: var(--hover);
+}
+
+.password-strength {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+    margin-top: 0.25rem;
+}
+
+.password-strength-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.75rem;
+}
+
+.password-strength-items li {
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+}
+
+.progress {
+    height: 3px !important;
+    width: 100%;
+    background: #f1f1f1;
+    border-radius: 0.25rem;
+}
+
+.progress-bar {
+    height: 3px !important;
+    border-radius: 0.25rem;
+}
+
+.progress-bar-danger {
+    background: #e90f10;
+}
+.progress-bar-warning{
+    background: #ffad00;
+}
+.progress-bar-success{
+    background: #02b502;
+}
+

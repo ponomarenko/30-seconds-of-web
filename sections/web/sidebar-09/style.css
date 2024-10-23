@@ -1,3 +1,5 @@
+
+
 :root {
   --primary-color: #131524;
   --text: white;
@@ -26,7 +28,8 @@
 }
 
 body {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Work Sans', 
+    sans-serif;
   background: var(--full-bg);
   font-size: 16px;
   padding: 1rem;
@@ -55,8 +58,10 @@ html {
   display: flex;
   color: var(--white);
   flex-direction: column;
-  background: var(--sidebar-background);
-  transition: max-width 0.1s ease-in-out;
+  background: var(
+    --sidebar-background);
+  transition: max-width 
+    0.1s ease-in-out;
 }
 
 .sidebar-title {
@@ -82,7 +87,9 @@ body.collapsed .hide {
 }
 
 .search__wrapper input {
-  background: var(--search-bg);
+  background: var(
+    --search-bg
+  );
   height: 2.5rem;
   width: 100%;
   border-radius: 0.5rem;
@@ -103,7 +110,8 @@ body.collapsed .hide {
   right: 1.5rem;
 }
 
-body.collapsed .search__wrapper svg {
+body.collapsed 
+.search__wrapper svg {
   top: 50%;
   left: 50%;
   right: auto;
@@ -112,21 +120,23 @@ body.collapsed .search__wrapper svg {
   stroke: var(--text-link);
 }
 
-.search__wrapper input::-webkit-input-placeholder {
+.search__wrapper 
+input::-webkit-input-placeholder {
   color: var(--text-link);
   white-space: nowrap;
 }
 
-body.collapsed .search__wrapper input {
+body.collapsed 
+.search__wrapper input {
   max-width: 2.5rem;
 }
 
-body.collapsed .search__wrapper input::-webkit-input-placeholder {
+body.collapsed .search__wrapper 
+input::-webkit-input-placeholder {
   color: transparent;
 }
 
 /*? sidebar top */
-
 .sidebar-top-wrapper {
   display: flex;
 }
@@ -166,7 +176,6 @@ body.collapsed .sidebar-top {
   object-fit: cover;
 }
 
-
 /*? menu links */
 .sidebar-links {
   margin-top: 1rem;
@@ -180,7 +189,8 @@ body.collapsed .sidebar-top {
   font-weight: 500;
   line-height: 1.125rem;
   margin-bottom: 0.5rem;
-  animation: fadeIn 0.2s ease-in-out;
+  animation: fadeIn 0.2s 
+    ease-in-out;
 }
 
 body.collapsed h2 {
@@ -201,7 +211,8 @@ body.collapsed h2 {
   color: var(--text-link);
 }
 
-body.collapsed .sidebar-links li {
+body.collapsed 
+.sidebar-links li {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -214,11 +225,13 @@ body.collapsed .sidebar-links li {
   min-width: 1.75rem;
 }
 
-.sidebar-links li a:hover svg {
+.sidebar-links li 
+a:hover svg {
   color: var(--sidebar-primary);
 }
 
-.sidebar-links li a:hover {
+.sidebar-links li 
+a:hover {
   color: var(--sidebar-primary);
 }
 
@@ -233,14 +246,16 @@ body.collapsed .sidebar-links li {
   align-items: center;
   height: 3.5rem;
   text-decoration: none;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color 
+    0.2s ease-in-out;
 }
 
 .sidebar-links li a .link {
   flex-grow: 1;
   overflow: hidden;
   white-space: nowrap;
-  animation: fadeIn 0.2s ease-in-out;
+  animation: fadeIn 
+    0.2s ease-in-out;
 }
 
 .sidebar-links li a img {
@@ -249,12 +264,14 @@ body.collapsed .sidebar-links li {
 }
 
 .sidebar-links .active:hover {
-  background: var(--sidebar-primary-hover);
+  background: var(
+    --sidebar-primary-hover);
 }
 
 .sidebar-links .active {
   text-decoration: none;
-  background: var(--sidebar-primary-hover);
+  background: var(
+    --sidebar-primary-hover);
   color: var(--text-link);
 }
 
@@ -263,12 +280,18 @@ body.collapsed .sidebar-links li {
 }
 
 .sidebar-links li a:hover svg {
-  stroke: var(--sidebar-primary-light);
-  color: var(--sidebar-primary-light);
+  stroke: var(
+    --sidebar-primary-light
+  );
+  color: var(
+    --sidebar-primary-light
+  );
 }
 
 .sidebar-links li a:hover {
-  color: var(--sidebar-primary-light);
+  color: var(
+    --sidebar-primary-light
+  );
 }
 
 /* ?tooltip */
@@ -276,7 +299,8 @@ body.collapsed .sidebar-links li {
   position: relative;
 }
 
-.tooltip .tooltip__content::after {
+.tooltip 
+.tooltip__content::after {
   content: " ";
   position: absolute;
   top: 50%;
@@ -285,7 +309,9 @@ body.collapsed .sidebar-links li {
   margin-top: -0.3125rem;
   border-width: 0.3125rem;
   border-style: solid;
-  border-color: transparent var(--sidebar-background) transparent transparent;
+  border-color: transparent 
+    var(--sidebar-background) 
+    transparent transparent;
 }
 
 .tooltip .tooltip__content {
@@ -300,7 +326,8 @@ body.collapsed .sidebar-links li {
   left: 5.625rem;
 }
 
-.collapsed .tooltip:hover .tooltip__content {
+.collapsed .tooltip:hover 
+.tooltip__content {
   visibility: visible;
 }
 
@@ -314,11 +341,13 @@ body.collapsed .sidebar-links li {
 
 .sidebar__action {
   padding: 1rem;
-  background: var(--cta-background);
+  background: var(
+    --cta-background);
   border-radius: 1rem;
   min-width: 1rem;
   color: var(--cta-text);
-  animation: fadeIn 0.2s ease-in-out;
+  animation: fadeIn 0.2s 
+    ease-in-out;
 }
 
 .sidebar__action p {
@@ -347,7 +376,8 @@ body.collapsed .sidebar-links li {
       var(--sidebar-primary-light) 100.02%);
 }
 
-.sidebar__action .progress-bar {
+.sidebar__action 
+.progress-bar {
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
@@ -360,7 +390,8 @@ body.collapsed .sidebar-links li {
     radial-gradient(closest-side,
       var(--cta-background) 79%,
       transparent 80% 100%),
-    conic-gradient(var(--sidebar-primary) 60%,
+    conic-gradient(
+      var(--sidebar-primary) 60%,
       var(--cta-background-darker) 0);
   margin-bottom: 1rem;
 }
@@ -407,24 +438,28 @@ body.collapsed .sidebar__action {
   flex-direction: column;
   gap: 0.25rem;
   white-space: nowrap;
-  animation: fadeIn 0.2s ease-in-out;
+  animation: fadeIn 0.2s 
+    ease-in-out;
 }
 
 .user-name {
   font-weight: 600;
   text-align: left;
   color: var(--text);
-  animation: fadeIn 0.2s ease-in-out;
+  animation: fadeIn 0.2s 
+    ease-in-out;
 }
 
 .email {
   color: var(--text-lighter);
   font-size: 0.8125rem;
-  animation: fadeIn 0.2s ease-in-out;
+  animation: fadeIn 0.2s 
+    ease-in-out;
 }
 
 .logout {
-  animation: fadeIn 0.2s ease-in-out;
+  animation: fadeIn 0.2s 
+    ease-in-out;
   margin-left: auto;
 }
 
@@ -444,8 +479,10 @@ body.collapsed .logout {
   place-items: center;
   cursor: pointer;
   right: -1rem;
-  border: 1px solid var(--cta-background-border);
-  background: var(--exp-btn-background);
+  border: 1px solid var(
+    --cta-background-border);
+  background: var(
+    --exp-btn-background);
   z-index: 2;
   width: 2rem;
   height: 2rem;
@@ -459,7 +496,8 @@ body.collapsed .logout {
   height: 1.25rem;
 }
 
-body.collapsed .expand-btn svg {
+body.collapsed 
+.expand-btn svg {
   transform: rotate(-360deg);
 }
 

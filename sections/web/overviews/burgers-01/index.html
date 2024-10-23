@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Loaders</title>
+    <title>Burgers</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,50 +17,77 @@
             <div class="profile-wrapper">
                 <img
                   class="profile"
-                  src="assets/profile_new.jpg"
+                  src="assets/david_mraz_resized.jpg"
                   alt="profile picture"
                 />
                 <p>@davidm_ai</p>
             </div>
         </div>
-       
-        <h1>CSS <span class="emph">
-            Burgers
-        </span></h1>
-        <div class="loaders">
-            <div class="loader-wrapper">
+        <h1>
+            <span class="emph">Burgers</span>
+        </h1>
+        <div class="burgers">
+            <div class="burger-wrapper">
                 <div>1</div>
-                <input type="checkbox" role="button" aria-label="Display the menu" class="menu">
+                <label class="burger-1" for="burger">
+                    <input type="checkbox" id="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>    
             </div>
-            <div class="loader-wrapper">
+            <div class="burger-wrapper">
                 <div>2</div>
-                <div class="loader-2"></div>
+                <div class="burger-2">
+                    <input id="ck-2" type="checkbox">
+                    <label class="toggle" for="ck-2">
+                      <div class="bar bar--top"></div>
+                      <div class="bar bar--middle"></div>
+                      <div class="bar bar--bottom"></div>
+                    </label>
+                </div>
             </div>
-            <div class="loader-wrapper">
+            <div class="burger-wrapper">
                 <div>3</div>
-                <div class="loader-3"></div>
+                <label class="burger-3">
+                    <input type="checkbox">
+                    <svg viewBox="0 0 32 32">
+                      <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                      <path class="line" d="M7 16 27 16"></path>
+                    </svg>
+                </label>
             </div>
-            <div class="loader-wrapper">
+            <div class="burger-wrapper">
                 <div>4</div>
-                <div class="loader-4"></div>
+                <div class="burger-4">
+                    <label class="bar" for="check">
+                        <input type="checkbox" id="check">
+                        <span class="top"></span>
+                        <span class="middle"></span>
+                        <span class="bottom"></span>
+                    </label>
+                </div>
             </div>
-            <div class="loader-wrapper">
+            <div class="burger-wrapper">
                 <div>5</div>
-                <div class="loader-5"></div>
+                <div class="burger-5">
+                    <input type="checkbox" id="ck-5">
+                    <label for="ck-5" class="toggle">
+                        <div class="bar bar--top"></div>
+                        <div class="bar bar--middle"></div>
+                        <div class="bar bar--bottom"></div>
+                    </label>
+                </div>
             </div>
-            <div class="loader-wrapper">
+            <div class="burger-wrapper">
                 <div>6</div>
-                <div class="cube-wrapper">
-                    <div class="cube">
-                        <div class="sides">
-                          <div class="top"></div>
-                          <div class="right"></div>
-                          <div class="bottom"></div>
-                          <div class="left"></div>
-                          <div class="front"></div>
-                          <div class="back"></div>
-                        </div>
-                      </div>
+                <div class="burger-6">
+                    <input type="checkbox" id="ck-6">
+                    <label for="ck-6" class="toggle">
+                        <div class="bars" id="bar1"></div>
+                        <div class="bars" id="bar2"></div>
+                        <div class="bars" id="bar3"></div>
+                    </label>
                 </div>
             </div>
         </div>
@@ -69,7 +96,7 @@
         </p>
         <p class="bottom-bar">
             <span class="modern-frontend-developer">
-                <span class="emph">Modern Frontend Developer</span>: <span class="emph">HTML</span> and <span class="emph">CSS</span> (55% off)
+                <span class="emph">Modern Frontend Developer</span>: <span class="emph">HTML</span> and <span class="emph">CSS</span> (56% off)
             </span>
             <span class="learning-link">
                 <img src="assets/atheros-learning.png" alt="arrow icon" />

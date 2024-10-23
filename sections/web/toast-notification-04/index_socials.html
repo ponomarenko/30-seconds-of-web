@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Toast Notification 01</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+            rel="stylesheet"
+        >
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="notification notification--success">
+                <div class="notification__body">
+                    <img
+                        src="assets/check-circle.svg"
+                        alt="Success"
+                        class="notification__icon"
+                    >
+                    Your account has been created! &#128640; 
+                </div>
+                <div class="notification__progress"></div>
+            </div>
+            <div class="notification notification--failure">
+                <div class="notification__body">
+                    <img
+                        src="assets/cross-circle.svg"
+                        alt="Failure"
+                        class="notification__icon"
+                    >
+                    Account creation failed! &#128543;
+                </div>
+                <div class="notification__progress"></div>
+            </div>
+            <div class="notification notification--warning">
+                <div class="notification__body">
+                    <img
+                        src="assets/warning-circle.svg"
+                        alt="Warning"
+                        class="notification__icon"
+                    >
+                    This is my warning message!
+                </div>
+                <div class="notification__progress"></div>
+            </div>
+            <div class="notification notification--info">
+                <div class="notification__body">
+                    <img
+                        src="assets/info-circle.svg"
+                        alt="Info"
+                        class="notification__icon"
+                    >
+                    A new message received!
+                </div>
+                <div class="notification__progress"></div>
+            </div>
+        </div>
+    </body>
+</html>
+
+

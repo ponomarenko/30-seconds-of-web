@@ -1,9 +1,11 @@
 
+
 :root {
   --bg: #F6F8FC;
   --primary: #705CFF;
   --secondary: #705CFF60;
   --h2-color: #5B5D72;
+  --text: white;
   --cube-side: 2.75rem;
   --cube-side-half: calc(var(--cube-side) / 2);
 }
@@ -26,11 +28,440 @@ body {
   margin-top: 7rem;
 }
 
-.loaders {
+.burgers {
     display: grid;
     margin: 0 auto;
     grid-template-columns: 6.5rem 6.5rem 6.5rem;
     grid-template-rows: 8rem 8rem;
     gap: 2rem;
     align-items: center;
+}
+
+.burger-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  height: 4.5rem;
+}
+
+h1 {
+  color: var(--h2-color);
+  margin-top: 0;
+  margin-bottom: 0.125rem;
+}
+
+.emph {
+  color: #705CFF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*::selection {
+  background: var(--primary);
+  color: var(--text);
+}
+
+/* test */
+.code-comments {
+  white-space: nowrap;
+  color: var(--h2-color);
+  font-weight: 500;
+  font-size: 1.25rem;
+}
+
+.cta-text {
+  color: var(--h2-color);
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.profile {
+  border-radius: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+.profile-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.bottom-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+}
+
+.modern-frontend-developer {
+  max-width: 12rem; 
+}
+
+.learning-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #705CFF;
+}
+
+.learning-link img {
+  width: 2.25rem;
+  height: 2.25rem;
+}
+
+/* burger 01 */
+.burger-1 {
+  position: relative;
+  width: 40px;
+  height: 35px;
+  color: var(--primary);
+  background: transparent;
+  cursor: pointer;
+  display: block;
+}
+
+.burger-1 input {
+  display: none;
+}
+
+.burger-1 span {
+  display: block;
+  position: absolute;
+  height: 6px;
+  width: 100%;
+  background: var(--primary);
+  border-radius: 12px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: .25s ease-in-out;
+}
+
+.burger-1 span:nth-of-type(1) {
+  top: 0px;
+  transform-origin: left center;
+}
+
+.burger-1 span:nth-of-type(2) {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-origin: left center;
+}
+
+.burger-1 span:nth-of-type(3) {
+  top: 100%;
+  transform-origin: left center;
+  transform: translateY(-100%);
+}
+
+.burger-1 input:checked ~ span:nth-of-type(1) {
+  transform: rotate(45deg);
+  top: 0px;
+  left: 5px;
+}
+
+.burger-1 input:checked ~ span:nth-of-type(2) {
+  width: 0%;
+  opacity: 0;
+}
+.burger-1 input:checked ~ span:nth-of-type(3) {
+  transform: rotate(-45deg);
+  top: 28px;
+  left: 5px;
+}
+
+/* burger 02 */
+.burger-2 #ck-2 {
+  display: none;
+}
+
+.burger-2 {
+  position: relative;
+  width: 40px;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 0.2rem;
+  display: block;
+  height: calc(4px * 3 + 8px * 2);
+}
+
+.burger-2 .bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 6px;
+  cursor: pointer;
+  border-radius: calc(7px / 2);
+  background: var(--primary);
+  color: inherit;
+  opacity: 1;
+  transition: none 0.35s cubic-bezier(.5,-0.35,.35,1.5) 0s;
+}
+
+.burger-2 .bar--top {
+  bottom: calc(50% + 8px + 4px/ 2);
+  transition-property: bottom, transform;
+  transition-delay: calc(0s + 0.35s) * .6;
+}
+
+.burger-2 .bar--middle {
+  top: calc(50% - 4px/ 2);
+  transition-property: opacity,transform;
+  transition-delay: calc(0s + 0.35s * .3);
+}
+
+.burger-2 .bar--bottom {
+  top: calc(50% + 10px + 4px/ 2);
+  transition-property: top, transform;
+  transition-delay: 0s;
+}
+
+.burger-2 #ck-2:checked + .toggle .bar--top {
+  transform: rotate(-135deg);
+  transition-delay: 0s;
+  bottom: calc(50% - 4px/ 2);
+}
+
+.burger-2 #ck-2:checked + .toggle .bar--middle {
+  opacity: 0;
+  transform: rotate(-135deg);
+  transition-delay: calc(0s + 0.35s * .3);
+}
+
+.burger-2 #ck-2:checked + .toggle .bar--bottom {
+  top: calc(50% - 4px/ 2);
+  transform: rotate(-225deg);
+  transition-delay: calc(0s + 0.35s * .6);
+}
+
+/* burger 03 */
+.burger-3 {
+  cursor: pointer;
+  margin-top: -1.1rem;
+}
+
+.burger-3 input {
+  display: none;
+}
+
+.burger-3 svg {
+  height: 4.25rem;
+  transition: transform 600ms 
+    cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: var(--primary);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.burger-3 input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.burger-3 input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+/* burger 04 */
+.burger-4 input[type = "checkbox"] {
+  -webkit-appearance: none;
+  display: none;
+  visibility: hidden;
+}
+
+.burger-4 .bar {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.burger-4 .bar span {
+  position: absolute;
+  width: 40px;
+  height: 6.5px;
+  background: var(--primary);
+  border-radius: 100px;
+  display: inline-block;
+  transition: 0.3s ease;
+  left: 0;
+}
+
+.burger-4 .bar span.top {
+  top: 0;
+}
+
+.burger-4 .bar span.middle {
+  top: 15px;
+}
+
+.burger-4 .bar span.bottom {
+  bottom: 4px;
+}
+
+.burger-4 input[type]:checked ~ span.top {
+  transform: rotate(45deg);
+  transform-origin: top left;
+  width: 48px;
+  left: 5px;
+}
+
+.burger-4 input[type]:checked ~ span.bottom {
+  transform: rotate(-45deg);
+  transform-origin: top left;
+  width: 48px;
+  bottom: -1px;
+}
+
+.burger-4 input[type]:checked ~ span.middle {
+  transform: translateX(-20px);
+  opacity: 0;
+}
+
+/* burger 05 */
+.burger-5 #ck-5 {
+  display: none;
+}
+
+.burger-5 .toggle {
+  position: relative;
+  width: 40px;
+  cursor: pointer;
+  margin: auto;
+  margin-top: 0.45rem;
+  display: block;
+  height: calc(4px * 3 + 8px * 2);
+}
+
+.burger-5 .bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 6.5px;
+  border-radius: calc(8px / 2);
+  background: var(--primary);
+  color: inherit;
+  opacity: 1;
+  transition: none 0.35s cubic-bezier(.5,-0.35,.35,1.5) 0s;
+}
+
+.burger-5 .bar--top {
+  bottom: calc(50% + 13px + 4px/ 2);
+  transition-property: bottom,transform;
+  transition-delay: calc(0s + 0.35s),0s;
+}
+
+.burger-5 .bar--middle {
+  top: calc(50% / 2);
+  transition-property: opacity;
+  transition-delay: calc(0s + 0.35s);
+}
+
+.burger-5 .bar--bottom {
+  top: calc(50% + 14px/ 2);
+  transition-property: top, transform;
+  transition-delay: calc(0s + 0.35s),0s;
+}
+
+.burger-5 input[type='checkbox']:checked + .toggle .bar--top {
+  bottom: calc(50% - 4px/ 2);
+  transform: rotate(135deg);
+  transition-delay: 0s, calc(0s + 0.35s);
+}
+
+.burger-5 input[type='checkbox']:checked + .toggle .bar--middle {
+  opacity: 0;
+  transition-duration: 0s;
+  transition-delay: calc(0s + 0.35s);
+}
+
+.burger-5 input[type='checkbox']:checked + .toggle .bar--bottom {
+  top: calc(50% - 4px/ 2);
+  transform: rotate(225deg);
+  transition-delay: 0s,calc(0s + 0.35s);
+}
+
+/* burger 06 */
+.burger-6 #ck-6 {
+  display: none;
+}
+
+.burger-6 .toggle {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  transition-duration: .5s;
+}
+
+.burger-6 .bars {
+  width: 100%;
+  height: 7px;
+  background: var(--primary);
+  border-radius: 6px;
+}
+
+.burger-6 #bar2 {
+  transition-duration: .8s;
+}
+
+.burger-6 #bar1, #bar3 {
+  width: 70%;
+}
+
+.burger-6 input[type='checkbox']:checked + .toggle .bars {
+  position: absolute;
+  transition-duration: .5s;
+}
+
+.burger-6 input[type='checkbox']:checked + .toggle #bar2 {
+  transform: scaleX(0);
+  transition-duration: .5s;
+}
+
+.burger-6 input[type='checkbox']:checked + .toggle #bar1 {
+  width: 100%;
+  transform: rotate(45deg);
+  transition-duration: .5s;
+}
+
+.burger-6 input[type='checkbox']:checked + .toggle #bar3 {
+  width: 100%;
+  transform: rotate(-45deg);
+  transition-duration: .5s;
+}
+
+.burger-6 input[type='checkbox']:checked + .toggle {
+  transition-duration: .5s;
+  transform: rotate(180deg);
 }
