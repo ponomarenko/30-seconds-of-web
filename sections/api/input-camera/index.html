@@ -3,48 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Allow photo album AND the camera</title>
+  <title>Allow Photo Album and Camera on Android and iOS</title>
   <style>
-    code {
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 20px;
+    }
+    header {
+      background-color: #f4f4f4;
+      padding: 20px;
+      text-align: center;
+    }
+    h2 {
+      color: #333;
+    }
+    main {
+      max-width: 800px;
+      margin: auto;
+    }
+    pre {
       background-color: #eeeeee;
       padding: 10px;
+      overflow-x: auto;
+    }
+    code {
+      background-color: #eeeeee;
+      padding: 3px;
+    }
+    a {
+      color: #0073e6;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
 <header>
-  <h2>How to allow the file picker AND camera capture on Android</h2>
+  <h2>How to Allow Photo Album and Camera on Android and iOS</h2>
 </header>
 <main>
   <article>
-    <h3>Allow photo album AND the camera</h3>
+    <h3>How to Let Users Choose Between Photo Album and Camera</h3>
     <p>
-      On Android devices, if you want to create a file input that prompts the user to either choose an image from their
-      photo album or take a picture with their camera, you'll need this basically undocumented capture attribute added
-      to your input's accept property:
+      On Android devices, if you want a file input that prompts the user to either select an image from their photo album
+      or capture a new one using their camera, you can use the <code>capture</code> attribute alongside the <code>accept</code> property.
+      Here's an example of a file input that allows both options:
     </p>
-    <pre><code>&lt;input type=&quot;file&quot; accept=&quot;image/*;capture=camera&quot;/&gt;</code></pre>
+    <pre><code>&lt;input type="file" accept="image/*;capture=camera"&gt;</code></pre>
     <p>
-      On iOS, the operating system will always show an image picker and the camera with a type="file" input even if it
-      doesn't have the ;capture=camera directive.
-      Also note, this attribute only does anything on mobile operating systems, this won't change the behavior of your
-      inputs for desktop clients.
+      This attribute is critical for Android devices. The system will display both the image picker and the camera capture options.
+      For iOS devices, using <code>type="file"</code> alone is sufficient, as iOS automatically shows both options without the need for
+      <code>capture=camera</code>.
     </p>
     <p>
       <input type="file" accept="image/*;capture=camera"/>
     </p>
   </article>
   <article>
-    <h3>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/capture" target="_blank">capture</a> property</h3>
+    <h3>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/capture" target="_blank">Capture Attribute</a></h3>
     <p>
-      A final note: if you add a capture property to a file input, like this:
+      Adding a <code>capture</code> attribute to a file input element allows you to specify which camera to use by default.
+      You can set the value of <code>capture</code> to either <strong>"environment"</strong> (usually the rear camera)
+      or <strong>"user"</strong> (usually the front camera).
     </p>
-    <pre><code>&lt;input type=&quot;file&quot; accept=&quot;image/*&quot; capture=&quot;environment&quot; /&gt;</code></pre>
+    <pre><code>&lt;input type="file" accept="image/*" capture="environment"&gt;</code></pre>
     <p>
-      ...this tells the browser to prefer camera capture over an image picker. The values can be "environment" or "user".
+      In this example, the file input will open with the device's rear (environment-facing) camera preferred for capturing images.
     </p>
     <p>
       <input type="file" accept="image/*" capture="environment" />
+    </p>
+  </article>
+  <article>
+    <h3>Ensuring Compatibility Across Devices</h3>
+    <p>
+      To ensure maximum compatibility across devices and browsers, you may want to provide a fallback.
+      Not all browsers handle the <code>capture</code> attribute consistently, so testing on different devices is crucial.
+      Here is a version without the <code>capture</code> attribute for cases where browser support is limited:
+    </p>
+    <pre><code>&lt;input type="file" accept="image/*"&gt;</code></pre>
+    <p>
+      This will display the default image picker on most devices, allowing the user to choose an image from their gallery.
+      Android users will be able to access their camera through the file picker, but it won't explicitly prefer the camera capture option.
+    </p>
+    <p>
+      <input type="file" accept="image/*"/>
     </p>
   </article>
 </main>
