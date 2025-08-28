@@ -1,83 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Loaders</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>FCP Optimized Loaders</title>
+    
+    <!-- Critical CSS - Inline for FCP -->
+    <style>
+        .critical-loader{width:24px;height:24px;border:3px solid #f3f3f3;border-top:3px solid #007acc;border-radius:50%;animation:spin-critical 0.8s linear infinite;margin:0 auto}@keyframes spin-critical{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+    </style>
 </head>
-
 <body>
-    <div class="container">
-        <div class="top-bar">
-            <div class="profile-wrapper">
-                <img
-                  class="profile"
-                  src="assets/profile_new.jpg"
-                  alt="profile picture"
-                />
-                <p>@davidm_ai</p>
-            </div>
-        </div>
-       
-        <h1>CSS <span class="emph">Loaders</span></h1>
-        <div class="loaders">
-            <div class="loader-wrapper">
-                <div>1</div>
-                <div class="loader-1"></div>    
-            </div>
-            <div class="loader-wrapper">
-                <div>2</div>
-                <div class="loader-2"></div>
-            </div>
-            <div class="loader-wrapper">
-                <div>3</div>
-                <div class="loader-3"></div>
-            </div>
-            <div class="loader-wrapper">
-                <div>4</div>
-                <div class="loader-4"></div>
-            </div>
-            <div class="loader-wrapper">
-                <div>5</div>
-                <div class="loader-5"></div>
-            </div>
-            <div class="loader-wrapper">
-                <div>6</div>
-                <div class="cube-wrapper">
-                    <div class="cube">
-                        <div class="sides">
-                          <div class="top"></div>
-                          <div class="right"></div>
-                          <div class="bottom"></div>
-                          <div class="left"></div>
-                          <div class="front"></div>
-                          <div class="back"></div>
-                        </div>
-                      </div>
-                </div>
-            </div>
-        </div>
-        <p class="code-comments">
-            Code In The Comments 👨‍💻
-        </p>
-        <p class="bottom-bar">
-            <span class="modern-frontend-developer">
-                <span class="emph">Modern Frontend Developer</span>: <span class="emph">HTML</span> and <span class="emph">CSS</span> (55% off)
-            </span>
-            <span class="learning-link">
-                <img src="assets/atheros-learning.png" alt="arrow icon" />
-                learning.atheros.ai
-            </span>
-        </p>
-        
+    <!-- Initial loading state -->
+    <div class="loader-overlay">
+        <div class="critical-loader"></div>
     </div>
+    
+    <!-- Main content -->
+    <main>
+        <h1>Your Application</h1>
+        <button id="load-data">Load Data</button>
+        <div id="content"></div>
+    </main>
 
-  
+    <!-- Load JavaScript -->
+    <script src="loader.js"></script>
+    <script>
+        // Initialize loader
+        const loaderManager = new LoaderManager();
+        
+        // Example usage
+        document.getElementById('load-data').addEventListener('click', async () => {
+            const loader = loaderManager.show('dots', document.getElementById('content'));
+            
+            try {
+                // Simulate API call
+                await new Promise(resolve => setTimeout(resolve, 2000));
+                document.getElementById('content').innerHTML = '<p>Data loaded!</p>';
+            } finally {
+                loaderManager.hide(loader);
+            }
+        });
+    </script>
 </body>
-
 </html>
